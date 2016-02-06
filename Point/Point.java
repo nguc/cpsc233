@@ -3,7 +3,7 @@ public class Point{
 	private int xCoord, yCoord;
 	private double distance;
 	private int ID;
-	private int pointCount = 1;
+	private int noOfPoints = 1;
 	public static int activePoints=0;
 
 	///Constructors
@@ -18,8 +18,8 @@ public class Point{
 	public Point(int x, int y)
 	{
 		this();
-		this.xCoord = x;
-		this.yCoord = y;
+		xCoord = x;
+		yCoord = y;
 	}
 
 	//Set methods
@@ -68,12 +68,22 @@ public class Point{
 	//Gives each object an ID number
 	public void pointID()
 	{
-		ID = pointCount;
+		ID = noOfPoints;
 	}
 
 	/*Keeps track of the number of points that are active
 	public static int activePoints()
 	{
-		return pointCount;
+		return noOfPoints;
 	}*/
+
+	public double distance(Point point1,Point point2){
+		distance = distance(point1,point2);
+		return distance;
+	}
+
+	public String toString(){
+		String pointCoord = xCoord + "," + yCoord;
+		return pointCoord;
+	}
 }
