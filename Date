@@ -1,0 +1,55 @@
+/** We define a class Date that outputs dates as month/day/year
+ * 
+ * @author nguc
+ *
+ */
+
+public class Date {
+
+	private int month;
+	private int day;
+	private int year;
+	public static int instances = 0;
+	
+	//Constructors
+	public Date(){
+		month = 1;
+		day = 1;
+		year = 1000;
+		instances ++;
+	}
+	
+	public Date(int mVal, int dVal, int yVal){
+		//this.month = month;
+		//this.day = day;
+		//this.year = year;
+		//OR
+		this();
+		setDate(mVal, dVal, yVal);
+	}
+	
+	 /**
+	 * Sets the date to the values entered by the user
+	 * @param monthIn Month entered by user
+	 * @param dayIn Day entered by user
+	 * @param yearIn Year entered by user
+	 */
+	public void setDate(int monthIn, int dayIn, int yearIn){
+		month = monthIn;
+		day = dayIn;
+		year = yearIn;
+	}
+	/**
+	 * Method returns the value set for year
+	 * @return Returns the value of year
+	 */
+	public int getYear(){
+		return year;
+	}
+	/** 
+	 * Method outputs the date in the order month/day/year
+	 */
+	public void displayDate(){
+		System.out.println("The date is " + month +"/"+ day + "/"+ year);
+	}
+}
