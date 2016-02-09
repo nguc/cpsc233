@@ -1,3 +1,5 @@
+// for UML public: +, Private: -, Protected: #
+//put all html files into a zip file
 import java.util.Scanner;
 
 class Test{
@@ -13,7 +15,7 @@ class Test{
 		yCoord = userInput.nextInt();
 		Point point1 = new Point(xCoord,yCoord);
 
-		System.out.println("Enter an x value for point 2: ");
+		/*System.out.println("Enter an x value for point 2: ");
 		xCoord = userInput.nextInt();
 		System.out.println("Enter a y value for point 2: ");
 		yCoord = userInput.nextInt();
@@ -24,8 +26,12 @@ class Test{
 		System.out.println("Enter a y value for point 3: ");
 		yCoord = userInput.nextInt();
 		Point point3 = new Point(xCoord,yCoord);
+*/
+		System.out.println("Point 1: (" + point1 + ")");
+		System.out.println("Current number of points: " + point1.activePoints);
 
-		System.out.println("Current number of points: " + point3.activePoints);
+		//point1 = null;
+		//Point.fullGC();
 		
 
 
