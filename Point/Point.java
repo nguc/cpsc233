@@ -2,22 +2,22 @@
 public class Point{
 
 	private int xCoord, yCoord;
-	private double distance;
-	private int ID;
-	private int pointCount = 1;
-	public static int activePoints=0;
+	public double distance;
+	public int ID;
+	private static int numOfPoints = 0;
+	public static int activeIns=0;
 
 	///Constructors
 	public Point()
 	{
 		this(0,0);
-		pointID();
-		activePoints++;
 	}
 
 	public Point(int x, int y)
 	{
 		this.setXAndY(x,y);
+		activeIns();
+		ID = ++numOfPoints;
 	}
 
 	//Set methods
@@ -54,43 +54,54 @@ public class Point{
 	{
 		xCoord = xCoord + deltaX;
 		yCoord = yCoord + deltaY;
-		//return setXandY(xCoord,yCoord);
 	}
 
 	//Calculates the distance between point object and a point passed in as a parameter
-	public double distance(int x, int y)
+	public double distance(Point point)
 	{
-		distance = Math.sqrt(Math.pow((x - xCoord),2) + Math.pow((y - yCoord),2)); 
+		distance = Math.sqrt(Math.pow((point.xCoord - this.xCoord),2) + Math.pow((point.yCoord - this.yCoord),2)); 
 		return distance;
 	}
 	// static method of distance
-	/*public static double distance(Point p1,Point p2)
+	public static double distance(Point p1,Point p2)
 	{
-		Point tempObject = new Point(p1);
-		return tempObject.distance(p2);
-	}*/
+		return p1.distance(p2);
+	}
 
 	//Gives each object an ID number
-	public void pointID()
+	public int pointID()
 	{
-		ID = pointCount;
+		return ID;
 	}
 
 	//Keeps track of the number of points that are active
-	public int activePoints()
+	public int activeIns()
 	{
-		return pointCount;
+		return activeIns++;
 	}
 
 	public String toString()
 	{
-		return this.xCoord + "," + this.yCoord;
+		return "(" + this.xCoord + "," + this.yCoord +")";
 		
 	}
+
 	protected void finalize() throws Throwable
 	{
 		super.finalize();
-		activePoints--;
+		activeIns--;
 	}
-	//public static void fullGC
+
+	public static void fullGC()
+	{
+		Runtime rt = Runtime.getRuntime();
+		long isFree = rt.freeMemory();
+		long wasFree;
+		do{
+			wasFree = isFree;
+			rt.runFinalization();
+			rt.gc();
+			isFree = rt.freeMemory();
+		}while(isFree>wasFree);
+	}
 }
