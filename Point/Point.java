@@ -6,18 +6,15 @@ Creates point objects with defalut coordinates or coordinates that are passed in
 public class Point{
 	//Variables
 	private int xCoord, yCoord;
-<<<<<<< HEAD
 	private double distance;
 	private int ID;
 	private int noOfPoints = 1;
 	public static int activePoints=0;
-=======
 	public int avgX,avgY;
 	public double distance;
 	public int ID;
 	private static int numOfPoints = 0;
 	public static int activeIns=0;
->>>>>>> eed23b6b0b5b0c5c91e1be7ea8db1fb130887fc0
 
 	/**
 	Creates a point at 0,0 and assigns each point an ID number and increments the number of active instansces
@@ -37,12 +34,9 @@ public class Point{
 	public Point(int x, int y)
 	{
 		this();
-<<<<<<< HEAD
 		xCoord = x;
 		yCoord = y;
-=======
 		this.setXAndY(x,y);
->>>>>>> eed23b6b0b5b0c5c91e1be7ea8db1fb130887fc0
 	}
 	/**
 	Registers the values entered by the user to the xCoord and yCoord. X and y coordinate values can be registerd at the same time or individually
@@ -139,11 +133,8 @@ public class Point{
 	*/
 	public int pointID()
 	{
-<<<<<<< HEAD
 		ID = noOfPoints;
-=======
 		return ID;
->>>>>>> eed23b6b0b5b0c5c91e1be7ea8db1fb130887fc0
 	}
 
 	/**
@@ -153,9 +144,8 @@ public class Point{
 	*/
 	public int activeIns()
 	{
-<<<<<<< HEAD
 		return noOfPoints;
-	}*/
+	}
 
 	public double distance(Point point1,Point point2){
 		distance = distance(point1,point2);
@@ -165,7 +155,6 @@ public class Point{
 	public String toString(){
 		String pointCoord = xCoord + "," + yCoord;
 		return pointCoord;
-=======
 		return activeIns++;
 	}
 
@@ -199,6 +188,5 @@ public class Point{
 			rt.gc();
 			isFree = rt.freeMemory();
 		}while(isFree>wasFree);
->>>>>>> eed23b6b0b5b0c5c91e1be7ea8db1fb130887fc0
 	}
 }
