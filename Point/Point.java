@@ -6,6 +6,10 @@ Creates point objects with defalut coordinates or coordinates that are passed in
 public class Point{
 	//Variables
 	private int xCoord, yCoord;
+	private double distance;
+	private int ID;
+	private int noOfPoints = 1;
+	public static int activePoints=0;
 	public int avgX,avgY;
 	public double distance;
 	public int ID;
@@ -30,6 +34,8 @@ public class Point{
 	public Point(int x, int y)
 	{
 		this();
+		xCoord = x;
+		yCoord = y;
 		this.setXAndY(x,y);
 	}
 	/**
@@ -127,6 +133,7 @@ public class Point{
 	*/
 	public int pointID()
 	{
+		ID = noOfPoints;
 		return ID;
 	}
 
@@ -137,6 +144,17 @@ public class Point{
 	*/
 	public int activeIns()
 	{
+		return noOfPoints;
+	}
+
+	public double distance(Point point1,Point point2){
+		distance = distance(point1,point2);
+		return distance;
+	}
+
+	public String toString(){
+		String pointCoord = xCoord + "," + yCoord;
+		return pointCoord;
 		return activeIns++;
 	}
 
