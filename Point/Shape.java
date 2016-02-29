@@ -1,4 +1,4 @@
-public abstract class Shape extends Point{
+public abstract class Shape{
 	int xCoord, yCoord;
 	double distance;
 
@@ -18,7 +18,9 @@ public abstract class Shape extends Point{
 	}
 
 	public Point getOrigin(){
-		Point origin = new Point(xCoord,yCoord);
+		// Shape myshape;Point origin = new Point();myShape = origin;
+		//Point origin = new Point(xCoord,yCoord);
+		super(xCoord,yCoord);
 		return origin;
 	}
 
@@ -32,9 +34,10 @@ public abstract class Shape extends Point{
 		return distance;
 	}
 
-	public double area();
+	//define these methods in the other classes
+	public abstract double area();
 
-	public double circumference();
+	public abstract double circumference();
 
 	public String toString(){
 		return "(" + xCoord + "," + yCoord +")";
