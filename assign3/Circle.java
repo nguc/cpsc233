@@ -32,6 +32,6 @@ public class Circle extends Shape{
 	}
 
 	public String toString(){
-		return "radius: " + radius + "x: " + xCoord + "y: " + yCoord;
+		return "radius: " + this.radius + "x: " + this.xCoord + "y: " + this.yCoord;
 	}
 }
