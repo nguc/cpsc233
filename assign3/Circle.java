@@ -5,7 +5,7 @@
 	@author Chi Nguyen
 	*/
 	public class Circle extends Shape{
-	int radius, xCoord, yCoord;
+	int radius;
 
 	/**
 	Creates a Circle object with origin set to 0,0 and radius set to 0 

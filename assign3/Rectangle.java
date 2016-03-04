@@ -5,7 +5,7 @@
 	@author Chi Nguyen
 	*/
 public class Rectangle extends Shape{
-	int length, width, originX, originY;
+	int length, width;
 
 	/**
 	Creates a Rectangle object with origin set to 0,0 and length and width set to 0 as well	
