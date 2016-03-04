@@ -2,35 +2,31 @@ public abstract class Shape{
 	int xCoord, yCoord;
 	double distance;
 
+	private Point origin;
+
 	public Shape(){
-		xCoord = 0;
-		yCoord = 0;
+		origin = new Point();
 	}
 
 	public Shape(int x, int y) {
-		xCoord = x;
-		yCoord = y;
+		origin = new Point(x,y);
 	}
 
 	public void setOrigin(int x, int y){
-		xCoord = x;
-		yCoord = y;
+		origin.setXandY(x,y);
 	}
 
 	public Point getOrigin(){
-		// Shape myshape;Point origin = new Point();myShape = origin;
-		//Point origin = new Point(xCoord,yCoord);
-		super(xCoord,yCoord);
+		
 		return origin;
 	}
 
 	public void move(int deltaX, int deltaY){
-		xCoord += deltaX;
-		yCoord += deltaY;
+		origin.move(deltaX,deltaY);
 	}
 
 	public double distance(Object other){
-		distance = Math.sqrt(Math.pow((other.xCoord - xCoord),2) + Math.pow((other.yCoord - yCoord),2)); 
+		distance = origin.distance(other); 
 		return distance;
 	}
 
@@ -40,7 +36,7 @@ public abstract class Shape{
 	public abstract double circumference();
 
 	public String toString(){
-		return "(" + xCoord + "," + yCoord +")";
+		return "(" + origin.xCoord + "," + origin.yCoord +")";
 	}
 
 }
