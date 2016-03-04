@@ -78,8 +78,8 @@ public class Point{
 	*/
 	public void move(int deltaX, int deltaY)
 	{
-		xCoord = xCoord + deltaX;
-		yCoord = yCoord + deltaY;
+		this.xCoord = xCoord + deltaX;
+		this.yCoord = yCoord + deltaY;
 	}
 
 	/**

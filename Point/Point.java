@@ -189,4 +189,9 @@ public class Point{
 			isFree = rt.freeMemory();
 		}while(isFree>wasFree);
 	}
+
+
+	//Assignment 3 classes
+	public 
+
 }

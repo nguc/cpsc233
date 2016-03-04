@@ -2,17 +2,14 @@ public class Rectangle extends Shape{
 	int length, width, originX, originY;
 
 	public Rectangle(){
-		length = 0;
-		width = 0;
-		originX = 0;
-		originY = 0;
+		super();
+		this.setLength(0);
+		this.setWidth(0);
 	}
 
 	public Rectangle(int l, int w, int x, int y){
-		this.setLength(l);
-		this.setWidth(w);
-		originX = x;
-		originY = y;
+		super(x,y);
+		this.setLengthAndWidth(l,w);
 	}
 
 	public void setLength(int l){
@@ -36,17 +33,17 @@ public class Rectangle extends Shape{
 		return width;
 	}
 
-	public double area(int length, int width){
-		double area = length * width;
+	public double area(){
+		double area = Math.abs(length) * Math.abs(width);
 		return area;
 	}
 
-	public double circumference(int length, int width){
-		double circumference = (2*length) + (2*width);
+	public double circumference(){
+		double circumference = (2*Math.abs(length)) + (2*Math.abs(width));
 		return circumference;
 	}
 
 	public String toString(){
-		return "length: " + this.length + "width: " + this.width + "origin: " + this.originX + "," + this.originY;
+		return "Rectangle | Length: " + this.length + " Width: " + this.width + " Origin: " + super.getOrigin();
 	}
 }
