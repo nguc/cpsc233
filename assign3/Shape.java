@@ -49,7 +49,7 @@ public abstract class Shape{
 	Shifts the origin according to the deltaX and deltaY values
 
 	@param deltaX value that the x coordinate of the origin will move by
-	@ param deltaY value that the y coordinate of the origin will move by
+	@param deltaY value that the y coordinate of the origin will move by
 	*/
 	public void move(int deltaX, int deltaY){
 		origin.move(deltaX,deltaY);
@@ -58,7 +58,7 @@ public abstract class Shape{
 	/**
 	Calculates the distance between a Shape object and another Shape that is passed in
 
-	@paramt other shape that the distance is measured from
+	@param other shape that the distance is measured from
 	@return distance the calculated distance between the object and the other object that is passed in
 	*/
 	public double distance(Shape other){
@@ -67,7 +67,14 @@ public abstract class Shape{
 	}
 
 
+	/**
+	@return calculated area of the shape
+	*/
 	public abstract double area();
+
+	/**
+	@return calculated circumference or perimeter of the shape
+	*/
 
 	public abstract double circumference();
 

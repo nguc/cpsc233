@@ -1,32 +1,40 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
+	/**
+	A text menu that allows the user to choose which actions they would like to perform. This program is not coded to take into account of errors in entering a value that is out of range. Doing so will result in the program crashing. Created objects will be stored in an ArrayList which results in more than 10 objects being allowed to be created.
+
+	@author Chi Nguyen
+	*/
+
 public class Test {
 	public static void main(String[] args){
+		//initializing Scanner, ArrayList and variables 
 		Scanner input = new Scanner(System.in);
 		ArrayList<Shape> objectArray = new ArrayList<Shape>();
 		int action, choice, position;
 		boolean quit = false;
 
 		do{
+			//The text menu
 			System.out.println("\n--- Actions ---");
 			System.out.println("Select an option: \n" +
 				"1) Create circle\n" +
 				"2) Create rectangle\n" +
 				"3) Change origin\n" +
 				"4) Set dimensions\n" +
-				"5) Display current state\n" +
+				"5) Display current state of object\n" +
 				"6) Move object\n" +
 				"7) Calculate distance between two objects\n" +
 				"8) Delete object\n" +
 				"9) Display current object array \n" +
-				"0) Quit");
+				"0) Quit\n");
 
 			action = input.nextInt();
 			//input.nextLine();
 
 			switch(action){
-		
+				//Creates a circle, giving the user the choice to make a circle with default values of all zeros or to enter their own values.
 				case 1: 
 					System.out.println("Create default (1) or manual input? (2)");
 					choice = input.nextInt();
@@ -46,7 +54,7 @@ public class Test {
 						objectArray.add(circle);
 					}
 					break;
-
+				//Creates a Rectangle, giving the user the choice to make a circle with default values of all zeros or to enter their own values
 				case 2:
 					System.out.println("Create default (1) or manual input? (2)");
 					choice = input.nextInt();
@@ -68,7 +76,7 @@ public class Test {
 						objectArray.add(rectangle);
 					}
 					break;
-
+				//Lets the user choose an object from the ArrayList and change the values of its' origin
 				case 3:
 					System.out.println("Which shape do you want to change? (Enter index value): ");
 					position = input.nextInt();
@@ -78,7 +86,7 @@ public class Test {
 					int y = input.nextInt();
 					objectArray.get(position).setOrigin(x,y);
 					break;
-
+				//Lets the user choose an object from the ArrayList and change its' dimentsions. For a circle they can change the radius. For a rectangle they can change the length, width or both. 
 				case 4:
 					System.out.println("Which shape do you want to change? (Enter index value):");
 					position = input.nextInt();
@@ -113,7 +121,7 @@ public class Test {
 						}
 					}
 						break;
-
+				//Lets the user choose an object from the ArrayList and display its' information. For a circle the origin, radius, area and circumference will be displayed. For a rectangle the origin, length, width, area and circumference will be displayed.
 				case 5:
 					int radius, length, width;
 					double area, circumference;
@@ -136,7 +144,7 @@ public class Test {
 					}
 					
 					break;
-
+				//Lets the user change the position of a shapes origin by the values entered in for deltaX and deltaY
 				case 6:
 					int deltaX, deltaY;
 					System.out.println("Which object do you want to move? (Enter index value): ");
@@ -147,7 +155,7 @@ public class Test {
 					deltaY = input.nextInt();
 					objectArray.get(position).move(deltaX,deltaY);
 					break;
-
+				//Lets the user choose two objects from the ArrayList and calculate the distance between their origins
 				case 7:
 					System.out.println("Calculate the distance between object (Enter index value): ");
 					position = input.nextInt();
@@ -158,13 +166,13 @@ public class Test {
 					double d = s1.getOrigin().distance(s2.getOrigin());
 					System.out.println(d);
 					break;
-
+				//Lets the user delete an obejct from the ArrayList
 				case 8: 
 					System.out.println("Which object do you want to delete? (Enter index value):");
 					position = input.nextInt();
 					objectArray.remove(position);
 					break;
-
+				//Display all objects in the ArrayList
 				case 9:
 					
 					int i = 0;
@@ -174,7 +182,7 @@ public class Test {
 					}
 					System.out.println();
 					break;
-
+				//Quits the program
 				case 0:
 					quit = true;
 					break;
