@@ -124,7 +124,7 @@ public class Test {
 						area = circle.area();
 						circumference = circle.circumference();
 						radius = circle.getRadius();
-						System.out.println("\nCircle[" + position + "]\nOrigin: " + objectArray.get(position).getOrigin() + "\nRadius: " + radius +"\nArea: " + area + "\nCircumference: " + circumference);
+						System.out.println("\nCircle[" + position +"]\n---------\nOrigin: " + objectArray.get(position).getOrigin() + "\nRadius: " + radius +"\nArea: " + area + "\nCircumference: " + circumference);
 					}
 					else if(objectArray.get(position) instanceof Rectangle){
 						Rectangle rectangle = (Rectangle) objectArray.get(position);
@@ -132,7 +132,7 @@ public class Test {
 						circumference = rectangle.circumference();
 						length = rectangle.getLength();
 						width = rectangle.getWidth();
-						System.out.println("\nRectangle[" + position + "]\nOrigin: " + objectArray.get(position).getOrigin() + "\nLength: " + length + "\nWidth: " + width + "\nArea: " + area + "\nCircumference: " + circumference);
+						System.out.println("\nRectangle[" + position + "]\n------------\nOrigin: " + objectArray.get(position).getOrigin() + "\nLength: " + length + "\nWidth: " + width + "\nArea: " + area + "\nCircumference: " + circumference);
 					}
 					
 					break;
@@ -152,8 +152,10 @@ public class Test {
 					System.out.println("Calculate the distance between object (Enter index value): ");
 					position = input.nextInt();
 					System.out.println("and object (Enter index value): ");
-					int position2  = input.nextInt();
-					double d = Point.distance(objectArray.get(position),objectArray.get(position2));
+					int position2 = input.nextInt();
+					Shape s1 = objectArray.get(position);
+					Shape s2 = objectArray.get(position2);
+					double d = s1.getOrigin().distance(s2.getOrigin());
 					System.out.println(d);
 					break;
 
@@ -180,6 +182,7 @@ public class Test {
 		}
 		while (!quit);
 
+		//Goodbye message upon quitting the program
 		System.out.println("Bye!");
 	}
 }

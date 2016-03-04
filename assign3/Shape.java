@@ -1,4 +1,7 @@
-public abstract class Shape extends Point{
+/**
+Initializes origin point using the Point class that 
+*/
+public abstract class Shape{
 	int xCoord, yCoord;
 	double distance;
 
@@ -25,8 +28,8 @@ public abstract class Shape extends Point{
 		origin.move(deltaX,deltaY);
 	}
 
-	public double distance(Point other){
-		distance = origin.distance(other);
+	public double distance(Shape other){
+		distance = Math.sqrt(Math.pow((other.xCoord - xCoord),2) + Math.pow((other.yCoord - yCoord),2)); 
 		return distance;
 	}
 
