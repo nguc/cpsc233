@@ -1,0 +1,23 @@
+import javax.swing.*;
+
+
+public class Demo {
+	public static void main(String[] args){
+		JFrame demoFrame = new JFrame("Demo window");
+		demoFrame.setSize(600, 500);
+		demoFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JButton b1 = new JButton("Button 1");
+		ActionHandler handler = new ActionHandler();
+		b1.addActionListener(handler);
+		
+		JButton b2 = new JButton("Button 2");
+		ActionHandler handler = new ActionHandler();
+		b2.addActionListener(handler);
+		
+		demoFrame.add(b1);
+		demoFrame.add(b2);
+		
+		demoFrame.setVisible(true);
+	}
+}

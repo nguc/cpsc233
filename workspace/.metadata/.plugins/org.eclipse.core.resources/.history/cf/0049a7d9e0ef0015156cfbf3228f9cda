@@ -1,0 +1,41 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
+import javax.swing.*;
+
+public class FirstWindow extends JFrame{
+	
+	public static final int WIDTH = 600;
+	public static final int HEIGHT = 500;
+	
+	//Window constructor
+	public FirstWindow(){
+		super();
+		
+		//setting a layout for the frame (can position the components in N,S,W,E or C)
+		//this.setLayout(new BorderLayout());
+		
+		//flow layout arranges components left to right
+		//this.setLayout(new FlowLayout());
+		
+		//Grid layout manager
+		this.setLayout(new GridLayout());
+		setSize(WIDTH,HEIGHT);
+		setTitle("First Window Class");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//set background color
+		this.getContentPane().setBackground(Color.lightGray);
+		
+		//making a button
+		JButton b1 = new JButton("Button 1");
+		b1.addActionListener(new ActionHandler());
+		this.add(b1,BorderLayout.NORTH);
+		
+		//making a label
+		JLabel j1 = new JLabel("My first label");
+		j1.setBackground(Color.DARK_GRAY);
+		this.add(j1,BorderLayout.CENTER);
+	}
+}

@@ -1,0 +1,21 @@
+import javax.swing.*;
+
+public class FirstWindow extends JFrame{
+	
+	public static final int WIDTH = 600;
+	public static final int HEIGHT = 500;
+	
+	public FirstWindow(){
+		super();
+		setSize(WIDTH,HEIGHT);
+		setTitle("First Window Class");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JButton b1 = new JButton("Button 1");
+		b1.addActionListener(new ActionHandler());
+		this.add(b1);
+		
+		JLabel j1 = new JLabel("My first label");
+		this.add(j1);
+	}
+}
